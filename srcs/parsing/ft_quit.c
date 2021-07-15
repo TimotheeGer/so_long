@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:25:42 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/13 15:04:21 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/07/15 14:03:19 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_free_tab(char **strs)
 
 int	ft_quit(int a, char *str, t_data *d)
 {
-	printf("test ft_quit\n");
-
 	(void)d;
 	if (a == 1)
 	{
@@ -40,8 +38,10 @@ int	ft_quit(int a, char *str, t_data *d)
 	{
 		write(2, str, ft_strlen(str));
 		ft_lstclear(&d->begin, free);
-		ft_free_tab(d->map);	
+		ft_free_tab(d->map);
 	}
+	if (d->c)
+		ft_lstclear_collect(d->c);
 	exit(0);
 }
 

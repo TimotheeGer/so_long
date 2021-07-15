@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_argument.c                                  :+:      :+:    :+:   */
+/*   ft_draw.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/13 13:21:41 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/13 14:49:42 by tigerber         ###   ########.fr       */
+/*   Created: 2021/07/15 14:16:59 by tigerber          #+#    #+#             */
+/*   Updated: 2021/07/15 16:12:05 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+# ifndef H
+#  define H 320
+# endif
+# ifndef W
+#  define W 832
+# endif
 
-int	ft_checkargu(char *arg)
+void	ft_draw(t_data *d)
 {
-	int	i;
-
-	i = ft_strlen(arg) - 4;
-	if (arg[i] == '.')
-	{
-		if ((ft_strncmp(&arg[i], ".ber", 4) == 0))
-			return (1);
-	}
-	return (0);
-}
-
-void	ft_argu(t_data *d, int ac, char **av)
-{
-	if ((ac == 2 && ft_checkargu(av[1])) == 1)
-		d->fd = open(av[1], O_RDONLY);
-	else
-		ft_quit(1, "Error\nerror argument.\n", NULL);
-	if (d->fd == -1)
-		ft_quit(1, "Error\nerror argument.\n", NULL);
+	d->mlx = mlx_init();
+	d->win = mlx_new_window(d->mlx, d->m.size_x, d->m.size_y, "so_long");
+	mlx_hook(d->win, 33, 1L << 17, ft_cross, d);
+	
+	
+	
+	
+	mlx_loop_hook(d->mlx, ft_render_next_frame, d);
+	mlx_loop(d->mlx);
 }

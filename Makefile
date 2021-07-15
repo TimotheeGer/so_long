@@ -6,19 +6,28 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/07/13 15:11:39 by tigerber         ###   ########.fr        #
+#    Updated: 2021/07/15 16:27:48 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC =	./srcs/so_long.c \
-		./srcs/ft_get_argument.c \
-		./srcs/ft_quit.c \
-		./srcs/ft_get_map.c \
-		./srcs/ft_utils.c \
-		./srcs/ft_parse_map.c 
+		./srcs/parsing/ft_get_argument.c \
+		./srcs/parsing/ft_quit.c \
+		./srcs/parsing/ft_get_map.c \
+		./srcs/parsing/ft_utils_parse.c \
+		./srcs/parsing/ft_utils_parse_two.c \
+		./srcs/parsing/ft_parse_map.c \
+		./srcs/parsing/ft_utils_lst.c \
+		./srcs/draw/ft_draw.c \
+		./srcs/draw/ft_make_image.c \
+		./srcs/draw/ft_quit_image.c \
+		./srcs/draw/ft_utils_draw.c \
+		./srcs/draw/ft_draw_map.c \
+		./srcs/draw/ft_draw_player.c
 		
+				
 OBJS=		${SRC:.c=.o}
 HEAD=		-I includes -I libft/includes -I mlx
 CC=			gcc
