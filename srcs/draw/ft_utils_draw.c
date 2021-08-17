@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:00:52 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 15:01:13 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:52:16 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 int	create_trgb(int t, int r, int g, int b)
 {

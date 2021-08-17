@@ -6,7 +6,7 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/07/15 16:27:48 by tigerber         ###   ########.fr        #
+#    Updated: 2021/08/17 14:17:00 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC =	./srcs/so_long.c \
 		./srcs/draw/ft_quit_image.c \
 		./srcs/draw/ft_utils_draw.c \
 		./srcs/draw/ft_draw_map.c \
-		./srcs/draw/ft_draw_player.c
+		./srcs/draw/ft_draw_player.c \
+		./srcs/mov/mov.c
 		
 				
 OBJS=		${SRC:.c=.o}

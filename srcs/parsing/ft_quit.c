@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:25:42 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 14:03:19 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:52:33 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	ft_free_tab(char **strs)
 {

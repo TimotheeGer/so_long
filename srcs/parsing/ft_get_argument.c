@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:21:41 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 13:59:07 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:52:20 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 int	ft_checkargu(char *arg)
 {

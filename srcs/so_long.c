@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:58:40 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 16:02:44 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 15:59:22 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_print_all_para(t_data *d)
 {

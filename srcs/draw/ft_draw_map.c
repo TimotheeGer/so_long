@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 16:23:36 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:36:13 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	p_map(t_data *d, int x, int y, int max)
 {
@@ -28,7 +28,7 @@ void	ft_init_map(t_data *d)
 	d->m.xo = 0;
 	d->m.xa = 0;
 	d->m.color = 0x0000FF;
-	d->m.maps = 40;
+	d->m.maps = 25;
 }
 
 void	ft_draw_map(t_data *d)

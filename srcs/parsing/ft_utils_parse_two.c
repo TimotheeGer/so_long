@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:56:09 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 16:12:55 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 16:09:39 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	ft_check_is_one_first_last(t_data *d)
 {
@@ -39,6 +39,7 @@ void	ft_get_position(int y, int x, char c, t_data *d)
 		d->p.indicateur = 1;
 		d->p.x = x;
 		d->p.y = y;
+		d->map[y][x] = '0';
 	}
 	if (c == 'E')
 	{
@@ -67,6 +68,10 @@ int	ft_count_size_line(char *map)
 
 void	ft_size_map(t_data *d)
 {
-	d->m.size_y = ft_count_line_in_tab(d->map) * 40;
-	d->m.size_x = ft_count_size_line(d->map[0]) * 40;
+	d->m.size_y = ft_count_line_in_tab(d->map) * 25;
+	d->m.size_x = ft_count_size_line(d->map[0]) * 25;
 }
+
+// 512 1024
+// 320
+// 24

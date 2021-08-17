@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 15:11:10 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 16:01:39 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 13:29:54 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	ft_checkaround(int y, int x, t_data *d)
 {

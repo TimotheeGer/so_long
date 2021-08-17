@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 14:12:15 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 14:07:35 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:52:48 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 int	ft_checkis_OCPE(char c)
 {

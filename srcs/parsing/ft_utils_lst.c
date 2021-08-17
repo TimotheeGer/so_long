@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:11:06 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 13:34:40 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:52:39 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 t_collect	*ft_new_collect(int x, int y)
 {

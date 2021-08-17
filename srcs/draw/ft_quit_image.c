@@ -6,11 +6,11 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:41:08 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 14:51:58 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:12:00 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	ft_destroy(t_data *d)
 {
@@ -29,6 +29,17 @@ void	ft_destroy(t_data *d)
 		ft_lstclear(&d->begin, free);
 	if (d->map)
 		ft_free_tab(d->map);
+}
+
+int	ft_escape(int keycode, t_data *d, int a)
+{
+	(void)a;
+	if (keycode == 65307)
+	{
+		ft_destroy(d);
+		exit(0);
+	}
+	return (0);
 }
 
 int	ft_cross(t_data *d)

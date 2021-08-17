@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/07/15 16:32:19 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/17 15:58:25 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ typedef struct	s_position
 {
 	int x;
 	int y;
+	double move;
+	int mvx;
+	int mvy;
 	int indicateur;
 }				t_posi;
 
@@ -144,7 +147,13 @@ void	p_map(t_data *data, int x, int y, int max);
 
 void	ft_draw_player(t_data *d, int size);
 
+int		key_hook(int keycode, t_data *d);
 
+int		ft_escape(int keycode, t_data *d, int a);
+
+void	move_front_back(int keycode, t_data *d);
+
+void	move_lateral(int keycode, t_data *d);
 
 
 
