@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 12:58:40 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 15:59:22 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/19 15:20:58 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void	ft_print_all_para(t_data *d)
 		}
 	}
 	printf("map[fin] = %s\n", d->map[ft_count_line_in_tab(d->map) - 1]);
-	printf("posi P x = %d\n", d->p.x);
-	printf("posi P y = %d\n", d->p.y);
+	printf("posi P x = %f\n", d->p.x);
+	printf("posi P y = %f\n", d->p.y);
 	printf("indic P y = %d\n", d->p.indicateur);
-	printf("posi E x = %d\n", d->e.x);
-	printf("posi E y = %d\n", d->e.y);
+	printf("posi E x = %f\n", d->e.x);
+	printf("posi E y = %f\n", d->e.y);
 	printf("indic E = %d\n", d->e.indicateur);
 	while (temc)
 	{
@@ -59,7 +59,7 @@ int	main(int ac, char **av)
 	ft_argu(&d, ac, av);
 	ft_get_map(&d);
 	ft_parse_map(&d);
-	ft_print_all_para(&d);
+	// ft_print_all_para(&d);
 	ft_draw(&d);
 	ft_quit(2, "FIN\n", &d);
 	return (0);

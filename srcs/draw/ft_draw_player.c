@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:26:33 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 15:20:50 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/19 15:35:47 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_draw_player(t_data *d, int size)
 {
-	int y = d->p.y;
-	int x = d->p.x;
+	double y = d->p.y;
+	double x = d->p.x;
 	int	x2;
 	int	y2;
 

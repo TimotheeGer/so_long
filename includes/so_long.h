@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 15:58:25 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/08/19 14:36:38 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ typedef struct	s_collect
 
 typedef struct	s_position
 {
-	int x;
-	int y;
+	double x;
+	double y;
 	double move;
 	int mvx;
 	int mvy;
