@@ -45,9 +45,10 @@ int	ft_render_next_frame(t_data *d)
 			&d->screen.bits_per_pixel,
 			&d->screen.line_length,
 			&d->screen.endian);
-	ft_full_screen_color(d);
-	ft_draw_map(d);
-	ft_draw_player(d, 12);
+	// ft_full_screen_color(d);
+	// ft_draw_map(d);
+	// ft_draw_player(d, 12);
+	ft_test_texture(d);
 	mlx_put_image_to_window(d->mlx, d->win, d->screen.img, 0, 0);   
 	return (0);
 }

@@ -40,10 +40,13 @@ typedef struct	s_img
 	
 	void	*img;
 	char	*addr;
+	int		*texture;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 	int		color;
+	int		width;
+	int		heigth;
 
 }				t_img;
 
@@ -67,6 +70,7 @@ typedef struct	s_position
 
 typedef struct	s_data
 {
+	t_img		tex;
 	t_map		m;
 	t_img		screen;
 	t_posi		p;
@@ -162,5 +166,11 @@ int		ft_quit(int a, char *str, t_data *d);
 void	ft_free_tab(char **strs);
 
 void	ft_check_malloc(void *data, t_data *d);
+
+void	ft_test_texture(t_data *d);
+
+void	ft_get_texture(t_data *d);
+
+
 
 # endif

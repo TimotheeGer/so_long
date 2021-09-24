@@ -32,7 +32,7 @@ SRC =	./srcs/so_long.c \
 OBJS=		${SRC:.c=.o}
 HEAD=		-I includes -I libft/includes -I mlx
 CC=			gcc
-CFLAGS=		-Wall -Werror -Wextra -g3
+CFLAGS=		-Wall -Werror -Wextra -g3 -fsanitize=address
 LIBFT_DIR=	libft
 MLX_DIR=	mlx
 LDFLAGS=	-L ${LIBFT_DIR} -L ${MLX_DIR}
