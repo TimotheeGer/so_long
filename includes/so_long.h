@@ -40,13 +40,15 @@ typedef struct	s_img
 	
 	void	*img;
 	char	*addr;
-	int		*texture;
+	char	*texture;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 	int		color;
 	int		width;
 	int		heigth;
+	int		x2;
+	int		y2;
 
 }				t_img;
 
@@ -70,7 +72,10 @@ typedef struct	s_position
 
 typedef struct	s_data
 {
-	t_img		tex;
+	t_img		eau;
+	t_img		pierre;
+	t_img		pomme;
+	t_img		gate;
 	t_map		m;
 	t_img		screen;
 	t_posi		p;

@@ -14,6 +14,10 @@
 
 void	ft_destroy(t_data *d)
 {
+	if (d->eau.img)
+		mlx_destroy_image(d->mlx, d->eau.img);
+	if (d->pierre.img)
+		mlx_destroy_image(d->mlx, d->pierre.img);
 	if (d->screen.img)
 		mlx_destroy_image(d->mlx, d->screen.img);
 	if (d->win)

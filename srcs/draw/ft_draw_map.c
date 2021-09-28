@@ -14,10 +14,29 @@
 
 void	p_map(t_data *d, int x, int y, int max)
 {
+	d->pierre.y2 = 1;
 	while (y < max)
 	{
-		my_mlx_pixel_put(&d->screen, x, y, d->m.color);
+		if(d->map[d->m.y][d->m.x] == '1')
+		{
+			d->pierre.color = ((int *)d->pierre.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->pierre.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->pierre.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'C')
+		{
+			d->pomme.color = ((int *)d->pomme.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->pomme.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->pomme.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'E')
+		{
+			d->gate.color = ((int *)d->gate.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->gate.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->gate.color);
+		}
 		y++;
+		d->pierre.y2++;
 	}
 }
 
@@ -38,21 +57,16 @@ void	ft_draw_map(t_data *d)
 	{
 		while (d->map[d->m.y][d->m.x])
 		{
-			if(d->map[d->m.y][d->m.x] == '1')
-				d->m.color = 0xFFFFFF;
-			else if (d->map[d->m.y][d->m.x] == 'E')
-				d->m.color = 0x000000;
-			else if (d->map[d->m.y][d->m.x] == 'C')
-				d->m.color = 0x00FF00;
-			else
-				d->m.color = create_trgb(0, 84, 153, 199);
 			d->m.xo = d->m.x * d->m.maps;
 			d->m.yo = d->m.y * d->m.maps;
 			d->m.xa = 0 + d->m.xo + 1;
+			d->pierre.x2 = 1;
 			while (d->m.xa < d->m.maps + d->m.xo - 1)
 			{
+				if (d->map[d->m.y][d->m.x] != '0')
 				p_map(d, d->m.xa, 0 + d->m.yo + 1, d->m.maps + d->m.yo - 1);
 				d->m.xa++;
+				d->pierre.x2++;
 			}
 			d->m.x++;
 		}
