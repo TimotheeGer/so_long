@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:41:08 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 14:12:00 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:56:01 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,28 @@ void	ft_destroy(t_data *d)
 		mlx_destroy_image(d->mlx, d->eau.img);
 	if (d->pierre.img)
 		mlx_destroy_image(d->mlx, d->pierre.img);
+	if (d->gate.img)
+		mlx_destroy_image(d->mlx, d->gate.img);
+	if (d->pomme.img)
+		mlx_destroy_image(d->mlx, d->pomme.img);
+	if (d->player1.img)
+		mlx_destroy_image(d->mlx, d->player1.img);
+	if (d->player2.img)
+		mlx_destroy_image(d->mlx, d->player2.img);
+	if (d->player3.img)
+		mlx_destroy_image(d->mlx, d->player3.img);
+	if (d->player4.img)
+		mlx_destroy_image(d->mlx, d->player4.img);
+	if (d->player5.img)
+		mlx_destroy_image(d->mlx, d->player5.img);
+	if (d->player6.img)
+		mlx_destroy_image(d->mlx, d->player6.img);
+	if (d->player7.img)
+		mlx_destroy_image(d->mlx, d->player7.img);
+	if (d->player8.img)
+		mlx_destroy_image(d->mlx, d->player8.img);
+	if (d->player9.img)
+		mlx_destroy_image(d->mlx, d->player9.img);
 	if (d->screen.img)
 		mlx_destroy_image(d->mlx, d->screen.img);
 	if (d->win)

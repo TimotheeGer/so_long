@@ -6,7 +6,7 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/08/17 14:17:00 by tigerber         ###   ########.fr        #
+#    Updated: 2021/10/01 14:20:22 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC =	./srcs/so_long.c \
 OBJS=		${SRC:.c=.o}
 HEAD=		-I includes -I libft/includes -I mlx
 CC=			clang
-CFLAGS=		-Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS=		-Wall -Werror -Wextra -g3
 LIBFT_DIR=	libft
 MLX_DIR=	mlx
 LDFLAGS=	-L ${LIBFT_DIR} -L ${MLX_DIR}

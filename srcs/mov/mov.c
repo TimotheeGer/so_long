@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:58:17 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/19 17:08:35 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:06:29 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,25 @@ void	move_front_back(int keycode, t_data *d)
 	// mouv = 0.1;
 	if (keycode == 'w')
 	{
+		d->keyp = keycode;
+
 		if (ft_check_0EC_mov((int)(d->p.y - 1), (int)d->p.x, d))
 			d->p.y --;
 		// printf("py w = %f\n", d->p.y);
 		// printf("px w = %f\n", d->p.x);
+		d->count++;
+		printf("count = %d\n", d->count);
 	}
 	if (keycode == 's')
 	{
+		d->keyp = keycode;
+
 		if (ft_check_0EC_mov((int)(d->p.y + 1), (int)d->p.x, d))
 			d->p.y ++;
 		// printf("py s = %f\n", d->p.y);
-		// printf("px s = %f\n", d->p.x);	
+		// printf("px s = %f\n", d->p.x);
+		d->count++;
+		printf("count = %d\n", d->count);	
 	}
 	if (d->map[(int)d->p.y][(int)d->p.x] == 'E')
 		{
@@ -52,18 +60,26 @@ void	move_lateral(int keycode, t_data *d)
 	
 	// mouv = 0.1;
 	if (keycode == 'd')
-	{
+	{	
+		d->keyp = keycode;
+		
 		if (ft_check_0EC_mov((int)(d->p.y), (int)d->p.x + 1, d))
 			d->p.x ++;
 		// printf("py = %f\n", d->p.y);
 		// printf("px = %f\n", d->p.x);
+		d->count++;
+		printf("count = %d\n", d->count);
 	}
 	if (keycode == 'a')
 	{
+		d->keyp = keycode;
+		
 		if (ft_check_0EC_mov((int)(d->p.y), (int)d->p.x - 1, d))
 			d->p.x --;
 		// printf("py = %f\n", d->p.y);
 		// printf("px = %f\n", d->p.x);
+		d->count++;
+		printf("count = %d\n", d->count);
 	}
 	if (d->map[(int)d->p.y][(int)d->p.x] == 'E')
 	{

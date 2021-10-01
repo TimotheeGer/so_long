@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:29:36 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 13:51:59 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:44:03 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_full_screen_color(t_data *d)
 	int y = 0;
 	int y2 = 0; 
 	int x2 = 0;
-	ft_get_texture(d);
 	while (y < d->m.size_y)
 	{
 		while (x < d->m.size_x)
@@ -37,7 +36,7 @@ void	ft_full_screen_color(t_data *d)
 			x++;
 			x2++;
 		}
-		if (y2 == 25)
+		if (y2 == 24)
 			y2 = 0;
 		x = 0;
 		y++;
@@ -57,7 +56,6 @@ int	ft_render_next_frame(t_data *d)
 	ft_full_screen_color(d);
 	ft_draw_map(d);
 	ft_draw_player(d, 12);
-	// ft_test_texture(d);
 	mlx_put_image_to_window(d->mlx, d->win, d->screen.img, 0, 0);   
 	return (0);
 }

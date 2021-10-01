@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/17 13:36:13 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/01 14:40:51 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	p_map(t_data *d, int x, int y, int max)
 {
-	d->pierre.y2 = 1;
+	d->pierre.y2 = 0;
 	while (y < max)
 	{
 		if(d->map[d->m.y][d->m.x] == '1')
@@ -60,8 +60,8 @@ void	ft_draw_map(t_data *d)
 			d->m.xo = d->m.x * d->m.maps;
 			d->m.yo = d->m.y * d->m.maps;
 			d->m.xa = 0 + d->m.xo + 1;
-			d->pierre.x2 = 1;
-			while (d->m.xa < d->m.maps + d->m.xo - 1)
+			d->pierre.x2 = 0;
+			while (d->m.xa < d->m.maps + d->m.xo)
 			{
 				if (d->map[d->m.y][d->m.x] != '0')
 				p_map(d, d->m.xa, 0 + d->m.yo + 1, d->m.maps + d->m.yo - 1);

@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/19 14:36:38 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:43:51 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,24 @@ typedef struct	s_img
 
 }				t_img;
 
+typedef struct	s_player
+{
+	
+	void	*img;
+	char	*addr;
+	char	*texture;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		color;
+	int		width;
+	int		heigth;
+	int		x2;
+	int		y2;
+
+
+}				t_player;
+
 typedef struct	s_collect
 {
 	int x;
@@ -72,6 +90,15 @@ typedef struct	s_position
 
 typedef struct	s_data
 {
+	t_img		player1;
+	t_img		player2;
+	t_img		player3;
+	t_img		player4;
+	t_img		player5;
+	t_img		player6;
+	t_img		player7;
+	t_img		player8;
+	t_img		player9;
 	t_img		eau;
 	t_img		pierre;
 	t_img		pomme;
@@ -90,6 +117,8 @@ typedef struct	s_data
 	char		**map;
 	void		*mlx;
 	void		*win;
+	int			keyp;
+	int			count;
 }				t_data;
 
 void	ft_argu(t_data *d, int ac, char **av);
@@ -172,9 +201,10 @@ void	ft_free_tab(char **strs);
 
 void	ft_check_malloc(void *data, t_data *d);
 
-void	ft_test_texture(t_data *d);
-
 void	ft_get_texture(t_data *d);
+
+void	ft_get_texture_player(t_data *d);
+
 
 
 
