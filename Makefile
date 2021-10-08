@@ -6,7 +6,7 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/10/01 14:20:22 by tigerber         ###   ########.fr        #
+#    Updated: 2021/10/05 14:32:33 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC =	./srcs/so_long.c \
 		./srcs/draw/ft_utils_draw.c \
 		./srcs/draw/ft_draw_map.c \
 		./srcs/draw/ft_draw_player.c \
+		./srcs/draw/ft_get_texture.c \
 		./srcs/mov/mov.c
 		
 				

@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/01 17:43:51 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:12:18 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,13 @@ typedef struct	s_position
 
 typedef struct	s_data
 {
+	t_img		explo1;
+	t_img		explo2;
+	t_img		explo3;
+	t_img		explo4;
+	t_img		explo5;
+	t_img		explo6;
+	t_img		explo7;
 	t_img		player1;
 	t_img		player2;
 	t_img		player3;
@@ -193,8 +200,6 @@ void	move_front_back(int keycode, t_data *d);
 
 void	move_lateral(int keycode, t_data *d);
 
-
-
 int		ft_quit(int a, char *str, t_data *d);
 
 void	ft_free_tab(char **strs);
@@ -203,8 +208,23 @@ void	ft_check_malloc(void *data, t_data *d);
 
 void	ft_get_texture(t_data *d);
 
-void	ft_get_texture_player(t_data *d);
+void	ft_get_texture_player_one(t_data *d);
 
+void	ft_get_texture_player_two(t_data *d);
+
+void	ft_get_texture_player_three(t_data *d);
+
+void	ft_get_texture_explosion(t_data *d);
+
+int		ft_quit_image(t_data *d);
+
+void	print_map(t_data *d);
+
+int    ft_check_line_space(t_data *d);
+
+int    ft_check_line_space_inverse(t_data *d);
+
+void	ft_get_new_map(t_data *d);
 
 
 

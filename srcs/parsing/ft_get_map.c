@@ -6,11 +6,12 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:45:38 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/16 15:52:24 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/05 15:20:59 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+
 
 void	ft_get_in_lst(t_data *d)
 {

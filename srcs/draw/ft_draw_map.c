@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/01 14:40:51 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:42:46 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,73 @@ void	p_map(t_data *d, int x, int y, int max)
 			if (d->gate.color > 0)
 				my_mlx_pixel_put(&d->screen, x, y, d->gate.color);
 		}
+
+		
+		// if(d->map[d->m.y][d->m.x] == '2')
+		// {
+		// 	d->explo1.color = ((int *)d->explo1.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo1.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo1.color);
+		// 	sleep(1);
+		// 	d->map[d->m.y][d->m.x] = '3';
+		// }
+		
+		
+		// if(d->map[d->m.y][d->m.x] == '3')
+		// {
+		// 	d->explo2.color = ((int *)d->explo2.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo2.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo2.color);
+		// 	sleep(1);
+		// 	d->map[d->m.y][d->m.x] = '4';
+		// }
+		
+		// if(d->map[d->m.y][d->m.x] == '4')
+		// {
+		// 	d->explo3.color = ((int *)d->explo3.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo3.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo3.color);
+		// 	sleep(1);
+		// 	d->map[d->m.y][d->m.x] = '5';
+		// }
+
+		// if(d->map[d->m.y][d->m.x] == '5')
+		// {
+		// 	d->explo4.color = ((int *)d->explo4.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo4.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo4.color);
+		// 	sleep(1);
+			
+		// 	d->map[d->m.y][d->m.x] = '6';
+		// }
+
+		// if(d->map[d->m.y][d->m.x] == '6')
+		// {
+		// 	d->explo5.color = ((int *)d->explo5.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo5.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo5.color);
+		// 	sleep(1);
+			
+		// 	d->map[d->m.y][d->m.x] = '7';
+		// }
+
+		if(d->map[d->m.y][d->m.x] == '2')
+		{
+			d->explo6.color = ((int *)d->explo6.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->explo6.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->explo6.color);
+			// sleep(1);
+			
+			// d->map[d->m.y][d->m.x] = '8';
+		}
+
+		// if(d->map[d->m.y][d->m.x] == '2')
+		// {
+		// 	d->explo7.color = ((int *)d->explo7.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+		// 	if (d->explo7.color > 0)
+		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo7.color);
+		// 	// d->map[d->m.y][d->m.x] = '4';
+		// }
 		y++;
 		d->pierre.y2++;
 	}

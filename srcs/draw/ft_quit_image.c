@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:41:08 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/01 17:56:01 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/05 14:28:54 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,13 @@ int	ft_escape(int keycode, t_data *d, int a)
 
 int	ft_cross(t_data *d)
 {
+	ft_destroy(d);
+	exit (0);
+}
+
+int	ft_quit_image(t_data *d)
+{
+	write(2, "Error.\nError get image.\n", 24);
 	ft_destroy(d);
 	exit (0);
 }
