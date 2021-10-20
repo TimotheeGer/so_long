@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/08 19:12:18 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/18 13:39:13 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <time.h>
 # include "../mlx/mlx.h"
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 50
@@ -126,6 +127,8 @@ typedef struct	s_data
 	void		*win;
 	int			keyp;
 	int			count;
+	time_t		time;
+	struct tm	*mytime;
 }				t_data;
 
 void	ft_argu(t_data *d, int ac, char **av);

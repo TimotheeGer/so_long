@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/08 19:42:46 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/18 13:54:36 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	p_map(t_data *d, int x, int y, int max)
 		// 	d->explo1.color = ((int *)d->explo1.texture)[d->pierre.y2 * 25 + d->pierre.x2];
 		// 	if (d->explo1.color > 0)
 		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo1.color);
-		// 	sleep(1);
+
 		// 	d->map[d->m.y][d->m.x] = '3';
 		// }
 		
@@ -52,7 +52,9 @@ void	p_map(t_data *d, int x, int y, int max)
 		// 	d->explo2.color = ((int *)d->explo2.texture)[d->pierre.y2 * 25 + d->pierre.x2];
 		// 	if (d->explo2.color > 0)
 		// 		my_mlx_pixel_put(&d->screen, x, y, d->explo2.color);
-		// 	sleep(1);
+		// 	int i = 100000000;
+		// 	while (i)
+		// 		i--;
 		// 	d->map[d->m.y][d->m.x] = '4';
 		// }
 		
@@ -90,7 +92,7 @@ void	p_map(t_data *d, int x, int y, int max)
 			d->explo6.color = ((int *)d->explo6.texture)[d->pierre.y2 * 25 + d->pierre.x2];
 			if (d->explo6.color > 0)
 				my_mlx_pixel_put(&d->screen, x, y, d->explo6.color);
-			// sleep(1);
+			// // sleep(1);
 			
 			// d->map[d->m.y][d->m.x] = '8';
 		}
@@ -115,6 +117,7 @@ void	ft_init_map(t_data *d)
 	d->m.xa = 0;
 	d->m.color = 0x0000FF;
 	d->m.maps = 25;
+	d->mytime = localtime(&d->time); 
 }
 
 void	ft_draw_map(t_data *d)
