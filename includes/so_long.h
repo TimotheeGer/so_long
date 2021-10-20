@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/18 13:39:13 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:10:42 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define _SO_LONG_
 
 # include "../libft/includes/libft.h"
+# include "../mlx/mlx.h"
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <time.h>
-# include "../mlx/mlx.h"
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 50
+
 # endif
 
 typedef struct		s_map
@@ -97,7 +98,7 @@ typedef struct	s_data
 	t_img		explo4;
 	t_img		explo5;
 	t_img		explo6;
-	t_img		explo7;
+	t_img		gate_open;
 	t_img		player1;
 	t_img		player2;
 	t_img		player3;

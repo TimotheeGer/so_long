@@ -6,11 +6,20 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/10/05 14:32:33 by tigerber         ###   ########.fr        #
+#    Updated: 2021/10/20 18:35:16 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
+CC = clang
+CFLAGS = -Wall -Werror -Wextra -g3
+HEAD = -I includes -I libft/includes -I mlx
+LIBFT_DIR = libft
+MLX_DIR = mlx
+LDFLAGS = -L ${LIBFT_DIR} -L ${MLX_DIR}
+LIBS = -lm -lft -lmlx -lXext -lX11
+DEFINE_DEFAULT= -D PROJECT_NAME="${NAME}"
 
 SRC =	./srcs/so_long.c \
 		./srcs/parsing/ft_get_argument.c \
@@ -29,32 +38,29 @@ SRC =	./srcs/so_long.c \
 		./srcs/draw/ft_get_texture.c \
 		./srcs/mov/mov.c
 		
-				
-OBJS=		${SRC:.c=.o}
-HEAD=		-I includes -I libft/includes -I mlx
-CC=			clang
-CFLAGS=		-Wall -Werror -Wextra -g3
-LIBFT_DIR=	libft
-MLX_DIR=	mlx
-LDFLAGS=	-L ${LIBFT_DIR} -L ${MLX_DIR}
-LIBS=		-lm -lft -lmlx -lXext -lX11
-DEFINE_DEFAULT= -D PROJECT_NAME="${NAME}"
+OBJS = ${SRC:.c=.o}
 
-%.o:%.c
-		${CC} ${CFLAGS} ${HEAD} -c $< -o ${<:.c=.o}
-$(NAME):	${OBJS}
-		make -C ${LIBFT_DIR}
-		make -C ${MLX_DIR}
-		${CC} ${CFLAGS} ${LDFLAGS} ${DEFINE_DEFAULT} ${OBJS} -o ${NAME} ${LIBS}
-all:	${NAME}
+all : ${NAME}
 
-clean:
-		rm -rf ${OBJS}
-		make clean -C ${LIBFT_DIR}
-		make clean -C ${MLX_DIR}
-fclean:	clean
-		rm -rf ${NAME}
-		make fclean -C ${LIBFT_DIR}
-		rm -rf screenshot.bmp
-re:	fclean all
+$(NAME) : ${OBJS}
+	@make -C ${LIBFT_DIR}
+	@make -C ${MLX_DIR}
+	@${CC} ${CFLAGS} ${LDFLAGS} ${DEFINE_DEFAULT} ${OBJS} -o ${NAME} ${LIBS}
+
+%.o : %.c
+	# @${CC} ${CFLAGS} ${HEAD} -c $< -o ${<:.c=.o}
+	@$(CC) $(CFLAGS) ${HEAD} -o $@ -c $<
+
+clean :
+	@rm -rf ${OBJS}
+	@make clean -C ${LIBFT_DIR}
+	@make clean -C ${MLX_DIR}
+
+fclean : clean
+	@rm -rf ${NAME}
+	@make fclean -C ${LIBFT_DIR}
+	@rm -rf screenshot.bmp
+
+re : fclean all
+
 .PHONY:	all clean fclean re

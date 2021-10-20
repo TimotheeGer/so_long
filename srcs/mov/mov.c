@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:58:17 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/08 19:40:18 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:25:10 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_check_0EC_mov(int y, int x, t_data *d)
 {
-	if (d->map[y][x] == '0' || d->map[y][x] == 'E' || d->map[y][x] == 'C' || d->map[y][x] == '2')
+	if (d->map[y][x] == '0' || d->map[y][x] == 'E' || d->map[y][x] == 'C' || d->map[y][x] == '2' || d->map[y][x] == 'O')
 		return (1);
 	return (0);
 }
@@ -61,7 +61,7 @@ void	move_front_back(int keycode, t_data *d)
 			d->map[(int)d->p.y][(int)d->p.x] = '0';
 			d->indic_c--;
 		}
-	if (d->map[(int)d->p.y][(int)d->p.x] == 'E' && d->indic_c == 0)
+	if (d->map[(int)d->p.y][(int)d->p.x] == 'O' && d->indic_c == 0)
 		{
 			ft_destroy(d);
 			exit (0);
@@ -112,7 +112,7 @@ void	move_lateral(int keycode, t_data *d)
 		d->map[(int)d->p.y][(int)d->p.x] = '0';
 		d->indic_c--;
 	}
-	if (d->map[(int)d->p.y][(int)d->p.x] == 'E' && d->indic_c == 0)
+	if (d->map[(int)d->p.y][(int)d->p.x] == 'O' && d->indic_c == 0)
 	{
 		ft_destroy(d);
 		exit (0);

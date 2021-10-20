@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/18 13:54:36 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:24:40 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ void	p_map(t_data *d, int x, int y, int max)
 			if (d->gate.color > 0)
 				my_mlx_pixel_put(&d->screen, x, y, d->gate.color);
 		}
-
+		if(d->map[d->m.y][d->m.x] == 'O')
+		{
+			d->gate_open.color = ((int *)d->gate_open.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->gate_open.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->gate_open.color);
+		}
 		
 		// if(d->map[d->m.y][d->m.x] == '2')
 		// {
@@ -117,12 +122,14 @@ void	ft_init_map(t_data *d)
 	d->m.xa = 0;
 	d->m.color = 0x0000FF;
 	d->m.maps = 25;
-	d->mytime = localtime(&d->time); 
 }
 
 void	ft_draw_map(t_data *d)
 {
 	ft_init_map(d);
+	if (d->indic_c == 0)
+		d->map[(int)d->e.y][(int)d->e.x] = 'O';
+		
 	while (d->map[d->m.y])
 	{
 		while (d->map[d->m.y][d->m.x])

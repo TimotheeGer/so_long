@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:31:36 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/08 19:11:21 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:24:16 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ void	ft_get_texture(t_data *d)
 		ft_quit_image(d);
 	d->gate.texture = mlx_get_data_addr(d->gate.img, &d->gate.bits_per_pixel,
 			&d->gate.line_length, &d->gate.endian);
+		
+		d->gate_open.img = mlx_xpm_file_to_image(d->mlx, "./texture/gate_open.xpm",
+			&d->gate_open.width, &d->gate_open.heigth);
+	if(!(d->gate_open.img))
+		ft_quit_image(d);
+	d->gate_open.texture = mlx_get_data_addr(d->gate_open.img, &d->gate_open.bits_per_pixel,
+			&d->gate_open.line_length, &d->gate_open.endian);
 }
 
 void	ft_get_texture_player_one(t_data *d)
@@ -148,13 +155,5 @@ void	ft_get_texture_explosion(t_data *d)
 	if(!(d->explo6.img))
 		ft_quit_image(d);
 	d->explo6.texture = mlx_get_data_addr(d->explo6.img, &d->explo6.bits_per_pixel,
-			&d->explo6.line_length, &d->explo6.endian);
-	
-	d->explo7.img = mlx_xpm_file_to_image(d->mlx, "./texture/explo7.xpm",
-			&d->explo7.width, &d->explo7.heigth);
-	if(!(d->explo7.img))
-		ft_quit_image(d);
-	d->explo7.texture = mlx_get_data_addr(d->explo7.img, &d->explo7.bits_per_pixel,
-			&d->explo7.line_length, &d->explo7.endian);
-	
+			&d->explo6.line_length, &d->explo6.endian);	
 }
