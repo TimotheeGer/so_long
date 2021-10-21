@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/20 19:10:42 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/21 16:38:54 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ typedef struct	s_data
 	t_img		explo4;
 	t_img		explo5;
 	t_img		explo6;
-	t_img		gate_open;
+	t_img		explo7;
 	t_img		player1;
 	t_img		player2;
 	t_img		player3;
@@ -109,9 +109,12 @@ typedef struct	s_data
 	t_img		player8;
 	t_img		player9;
 	t_img		eau;
+	t_img		box;
 	t_img		pierre;
 	t_img		pomme;
+	t_img		appletoxic;
 	t_img		gate;
+	t_img		gate_open;
 	t_map		m;
 	t_img		screen;
 	t_posi		p;
@@ -119,6 +122,7 @@ typedef struct	s_data
 	t_collect	*c;
 	t_collect	*begin_c;
 	int			indic_c;
+	int			indic_p;
 	char		*line;
 	int			fd;
 	t_list		*lst;
@@ -128,8 +132,10 @@ typedef struct	s_data
 	void		*win;
 	int			keyp;
 	int			count;
-	time_t		time;
-	struct tm	*mytime;
+	int			time;
+	int			explo_x;
+	int			explo_y;
+	char		*str_steps;
 }				t_data;
 
 void	ft_argu(t_data *d, int ac, char **av);
@@ -192,6 +198,12 @@ void	ft_draw_map(t_data *d);
 
 void	ft_init_map(t_data *d);
 
+void	ft_explosion_part_one(t_data *d);
+
+void	ft_explosion_part_two(t_data *d);
+
+void	ft_explosion(t_data *d);
+
 void	p_map(t_data *data, int x, int y, int max);
 
 void	ft_draw_player(t_data *d, int size);
@@ -229,6 +241,9 @@ int    ft_check_line_space(t_data *d);
 int    ft_check_line_space_inverse(t_data *d);
 
 void	ft_get_new_map(t_data *d);
+
+void	ft_put_steps(t_data *d);
+
 
 
 

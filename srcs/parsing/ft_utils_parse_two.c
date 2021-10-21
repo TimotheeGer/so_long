@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 13:56:09 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/20 19:21:02 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/21 16:49:43 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_get_collect(int y, int x, t_data *d)
 
 void	ft_get_position(int y, int x, char c, t_data *d)
 {
+	if (c == 'P' && d->p.indicateur == 1)
+		ft_quit(2, "Error\nto much P.\n", d);
 	if (c == 'P')
 	{
 		d->p.indicateur = 1;
