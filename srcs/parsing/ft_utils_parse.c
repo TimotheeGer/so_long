@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 14:12:15 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/05 15:49:26 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:31:29 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_checkis_OCPE(char c)
 {
-	return (c == '0' || c == 'C' || c == 'P' || c == 'E');
+	return (c == '0' || c == 'C' || c == 'P' || c == 'E' || c == 'T');
 }
 
 int	ft_checkpara(char *str, char c)

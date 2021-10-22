@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:31:36 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 16:38:31 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:32:30 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,48 @@ void	ft_get_texture(t_data *d)
 		ft_quit_image(d);
 	d->box.texture = mlx_get_data_addr(d->box.img, &d->box.bits_per_pixel,
 			&d->box.line_length, &d->box.endian);
+
+	d->tornade.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade.xpm",
+			&d->tornade.width, &d->tornade.heigth);
+	if(!(d->tornade.img))
+		ft_quit_image(d);
+	d->tornade.texture = mlx_get_data_addr(d->tornade.img, &d->tornade.bits_per_pixel,
+			&d->tornade.line_length, &d->tornade.endian);
+
+	d->tornade1.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade1.xpm",
+			&d->tornade1.width, &d->tornade1.heigth);
+	if(!(d->tornade1.img))
+		ft_quit_image(d);
+	d->tornade1.texture = mlx_get_data_addr(d->tornade1.img, &d->tornade1.bits_per_pixel,
+			&d->tornade1.line_length, &d->tornade1.endian);
+	
+	d->tornade2.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade2.xpm",
+			&d->tornade2.width, &d->tornade2.heigth);
+	if(!(d->tornade2.img))
+		ft_quit_image(d);
+	d->tornade2.texture = mlx_get_data_addr(d->tornade2.img, &d->tornade2.bits_per_pixel,
+			&d->tornade2.line_length, &d->tornade2.endian);
+
+	d->tornade3.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade3.xpm",
+			&d->tornade3.width, &d->tornade3.heigth);
+	if(!(d->tornade3.img))
+		ft_quit_image(d);
+	d->tornade3.texture = mlx_get_data_addr(d->tornade3.img, &d->tornade3.bits_per_pixel,
+			&d->tornade3.line_length, &d->tornade3.endian);
+
+	d->tornade4.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade4.xpm",
+			&d->tornade4.width, &d->tornade4.heigth);
+	if(!(d->tornade4.img))
+		ft_quit_image(d);
+	d->tornade4.texture = mlx_get_data_addr(d->tornade4.img, &d->tornade4.bits_per_pixel,
+			&d->tornade4.line_length, &d->tornade4.endian);
+
+	d->tornade5.img = mlx_xpm_file_to_image(d->mlx, "./texture/tornade5.xpm",
+			&d->tornade5.width, &d->tornade5.heigth);
+	if(!(d->tornade5.img))
+		ft_quit_image(d);
+	d->tornade5.texture = mlx_get_data_addr(d->tornade5.img, &d->tornade5.bits_per_pixel,
+			&d->tornade5.line_length, &d->tornade5.endian);
 }
 
 void	ft_get_texture_player_one(t_data *d)
@@ -103,7 +145,14 @@ void	ft_get_texture_player_two(t_data *d)
 	if(!(d->player7.img))
 		ft_quit_image(d);
 	d->player7.texture = mlx_get_data_addr(d->player7.img, &d->player7.bits_per_pixel,
-			&d->player7.line_length, &d->player7.endian);	
+			&d->player7.line_length, &d->player7.endian);
+	
+	d->phamtom.img = mlx_xpm_file_to_image(d->mlx, "./texture/phamtom.xpm",
+			&d->phamtom.width, &d->phamtom.heigth);
+	if(!(d->phamtom.img))
+		ft_quit_image(d);
+	d->phamtom.texture = mlx_get_data_addr(d->phamtom.img, &d->phamtom.bits_per_pixel,
+			&d->phamtom.line_length, &d->phamtom.endian);		
 }
 
 void	ft_get_texture_player_three(t_data *d)

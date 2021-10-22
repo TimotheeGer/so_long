@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:29:36 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 16:56:48 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:18:29 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ void	ft_full_screen_color(t_data *d)
 	}
 }
 
-void	ft_put_rectangle_(t_data *d)
+void	ft_put_box(t_data *d)
 {
-	int x = 0;
-	int y = 0;
-	// int y2 = 0; 
-	// int x2 = 0;
+	int x;
+	int y;
+
+	x = 0;
+	y = 0;
 	while (y < 25)
 	{
 		while (x < 200)
@@ -65,6 +66,13 @@ void	ft_put_rectangle_(t_data *d)
 	}
 }
 
+// void	ft_put_gameover(t_data *d)
+// {
+// 	// printf("keyp == %c\n", (char)d->keyp);
+// 	if (d->keyp == 'b')
+// 		mlx_string_put(d->mlx, d->win, 15, 17, 0x000000, "GAME OVER");
+// }
+
 int	ft_render_next_frame(t_data *d)
 {
  	if (d->screen.img != NULL)
@@ -77,10 +85,13 @@ int	ft_render_next_frame(t_data *d)
 	ft_full_screen_color(d);
 	ft_draw_map(d);
 	ft_draw_player(d, 12);
-	ft_put_rectangle_(d);
+	//BONUS
+	ft_put_box(d);
 	mlx_put_image_to_window(d->mlx, d->win, d->screen.img, 0, 0);
+	//BONUS
 	ft_put_steps(d);
-	mlx_string_put(d->mlx, d->win, 50, 15, 0xCC0000, d->str_steps);
+	mlx_string_put(d->mlx, d->win, 15, 17, 0x000000, d->str_steps);
+	// ft_put_gameover(d);
   
 	return (0);
 }

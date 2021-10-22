@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:58:17 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 16:31:46 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:39:29 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int		ft_check_0EC_mov(int y, int x, t_data *d)
 {
-	if (d->map[y][x] == '0' || d->map[y][x] == 'E' || d->map[y][x] == 'C' || d->map[y][x] == '2' || d->map[y][x] == 'O')
+	if (d->map[y][x] == '0' || d->map[y][x] == 'E' || d->map[y][x] == 'C'
+		|| d->map[y][x] == '2' || d->map[y][x] == 'O' || d->map[y][x] == 'T'
+		|| d->map[y][x] == 'Y' || d->map[y][x] == 'U' || d->map[y][x] == 'I'
+		|| d->map[y][x] == 'G' || d->map[y][x] == 'H')
 		return (1);
 	return (0);
 }
@@ -26,6 +29,8 @@ void	ft_put_steps(t_data *d)
 	char *steps;
 
 	steps = ft_itoa(d->count);
+	// if (d->count == 0)
+	// 	write(1 , "steps = 0", 10);
 	if (d->str_steps)
 	{
 		free(d->str_steps);
@@ -33,7 +38,8 @@ void	ft_put_steps(t_data *d)
 	}
 	d->str_steps = ft_strjoin("steps = ", steps);
 	free(steps);
-
+	write(1 , d->str_steps, ft_strlen(d->str_steps));
+	write(1 ,"\n", 1);
 	//free str_step a la fin dans un ft_error ou quit
 }
 
@@ -78,6 +84,14 @@ void	move_front_back(int keycode, t_data *d)
 		{
 			d->map[(int)d->p.y][(int)d->p.x] = '0';
 			d->indic_c--;
+		}
+	if (d->map[(int)d->p.y][(int)d->p.x] == 'T' || d->map[(int)d->p.y][(int)d->p.x] == 'I' || d->map[(int)d->p.y][(int)d->p.x] == 'Y'
+			|| d->map[(int)d->p.y][(int)d->p.x] == 'U' || d->map[(int)d->p.y][(int)d->p.x] == 'G' || d->map[(int)d->p.y][(int)d->p.x] == 'H')
+		{
+			d->dead = 1;
+			d->keyp = 1;
+			ft_destroy(d);
+			exit (0);
 		}
 	if (d->map[(int)d->p.y][(int)d->p.x] == 'O' && d->indic_c == 0)
 		{
@@ -131,6 +145,14 @@ void	move_lateral(int keycode, t_data *d)
 		d->map[(int)d->p.y][(int)d->p.x] = '0';
 		d->indic_c--;
 	}
+	if (d->map[(int)d->p.y][(int)d->p.x] == 'T' || d->map[(int)d->p.y][(int)d->p.x] == 'I' || d->map[(int)d->p.y][(int)d->p.x] == 'Y'
+			|| d->map[(int)d->p.y][(int)d->p.x] == 'U' || d->map[(int)d->p.y][(int)d->p.x] == 'G' || d->map[(int)d->p.y][(int)d->p.x] == 'H')
+	{
+		d->dead = 1;
+		d->keyp = 1;
+		ft_destroy(d);
+		exit (0);
+	}
 	if (d->map[(int)d->p.y][(int)d->p.x] == 'O' && d->indic_c == 0)
 	{
 		ft_destroy(d);
@@ -143,9 +165,9 @@ void	move_lateral(int keycode, t_data *d)
 
 int	key_hook(int keycode, t_data *d)
 {
-	
 	ft_escape(keycode, d, 0);
 	move_front_back(keycode, d);
 	move_lateral(keycode, d);
+	ft_put_steps(d);
 	return (0);
 }

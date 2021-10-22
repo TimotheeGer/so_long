@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 15:09:43 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 15:07:02 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 16:56:26 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,43 @@ void	p_map(t_data *d, int x, int y, int max)
 			if (d->explo7.color > 0)
 				my_mlx_pixel_put(&d->screen, x, y, d->explo7.color);
 		}
+		
+		if(d->map[d->m.y][d->m.x] == 'T')
+		{
+			d->tornade.color = ((int *)d->tornade.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'Y')
+		{
+			d->tornade1.color = ((int *)d->tornade1.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade1.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade1.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'U')
+		{
+			d->tornade2.color = ((int *)d->tornade2.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade2.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade2.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'I')
+		{
+			d->tornade3.color = ((int *)d->tornade3.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade3.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade3.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'G')
+		{
+			d->tornade4.color = ((int *)d->tornade4.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade4.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade4.color);
+		}
+		if(d->map[d->m.y][d->m.x] == 'H')
+		{
+			d->tornade5.color = ((int *)d->tornade5.texture)[d->pierre.y2 * 25 + d->pierre.x2];
+			if (d->tornade5.color > 0)
+				my_mlx_pixel_put(&d->screen, x, y, d->tornade5.color);
+		}
 		y++;
 		d->pierre.y2++;
 	}
@@ -93,7 +130,8 @@ void	p_map(t_data *d, int x, int y, int max)
 void	ft_draw_map(t_data *d)
 {
 	ft_init_map(d);
-	ft_explosion(d);			
+	ft_explosion(d);
+	ft_tornade_sheet(d);		
 	while (d->map[d->m.y])
 	{
 		while (d->map[d->m.y][d->m.x])

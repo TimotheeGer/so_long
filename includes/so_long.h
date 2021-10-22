@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 16:38:54 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:33:59 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@
 #  define BUFFER_SIZE 50
 
 # endif
+
+typedef struct		s_list_twist
+{
+	int				x;
+	int				y;
+	struct s_list_twist	*next;
+}					t_list_twist;
 
 typedef struct		s_map
 {
@@ -108,6 +115,13 @@ typedef struct	s_data
 	t_img		player7;
 	t_img		player8;
 	t_img		player9;
+	t_img		phamtom;
+	t_img		tornade;
+	t_img		tornade1;
+	t_img		tornade2;
+	t_img		tornade3;
+	t_img		tornade4;
+	t_img		tornade5;
 	t_img		eau;
 	t_img		box;
 	t_img		pierre;
@@ -121,6 +135,8 @@ typedef struct	s_data
 	t_posi		e;
 	t_collect	*c;
 	t_collect	*begin_c;
+	t_list_twist *twist;
+	t_list_twist *begin_twist;
 	int			indic_c;
 	int			indic_p;
 	char		*line;
@@ -133,9 +149,14 @@ typedef struct	s_data
 	int			keyp;
 	int			count;
 	int			time;
+	int			time2;
+	int			time3;
 	int			explo_x;
 	int			explo_y;
+	int			twist_x;
+	int			twist_y;
 	char		*str_steps;
+	int			dead;
 }				t_data;
 
 void	ft_argu(t_data *d, int ac, char **av);
@@ -243,6 +264,18 @@ int    ft_check_line_space_inverse(t_data *d);
 void	ft_get_new_map(t_data *d);
 
 void	ft_put_steps(t_data *d);
+
+void	ft_put_box(t_data *d);
+
+void	ft_tornade_sheet(t_data *d);
+
+t_list_twist	*ft_new_twist(int x, int y);
+
+void	ft_lstadd_twist(t_list_twist **alst, t_list_twist *new);
+
+void	ft_lstclear_twist(t_list_twist *begin_c);
+
+void	ft_get_twist(int y, int x, t_data *d);
 
 
 
