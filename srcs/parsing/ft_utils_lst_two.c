@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_lst.c                                     :+:      :+:    :+:   */
+/*   ft_utils_lst_two.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 13:11:06 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/26 17:17:23 by tigerber         ###   ########.fr       */
+/*   Created: 2021/10/26 17:16:32 by tigerber          #+#    #+#             */
+/*   Updated: 2021/10/26 17:17:10 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-t_collect	*ft_new_collect(int x, int y)
+t_list_twist	*ft_new_twist(int x, int y)
 {
-	t_collect	*new_collect;
+	t_list_twist	*new_twist;
 
-	new_collect = malloc (sizeof (t_collect));
-	if (!(new_collect))
+	new_twist = malloc (sizeof (t_list_twist));
+	if (!(new_twist))
 		return (NULL);
-	new_collect->y = y;
-	new_collect->x = x;
-	new_collect->next = NULL;
-	return (new_collect);
+	new_twist->y = y;
+	new_twist->x = x;
+	new_twist->next = NULL;
+	return (new_twist);
 }
 
-void	ft_lstadd_collect(t_collect **alst, t_collect *new)
+void	ft_lstadd_twist(t_list_twist **alst, t_list_twist *new)
 {
-	t_collect	*temp;
+	t_list_twist	*temp;
 
 	if (!alst || !new)
 		return ;
@@ -44,9 +44,9 @@ void	ft_lstadd_collect(t_collect **alst, t_collect *new)
 		*alst = new;
 }
 
-void	ft_lstclear_collect(t_collect *begin_c)
+void	ft_lstclear_twist(t_list_twist *begin_c)
 {
-	t_collect	*temp;
+	t_list_twist	*temp;
 
 	while (begin_c != NULL)
 	{

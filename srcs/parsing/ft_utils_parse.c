@@ -6,13 +6,13 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 14:12:15 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/22 15:31:29 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:24:06 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
 
-int	ft_checkis_OCPE(char c)
+int	ft_checkis_ocpe(char c)
 {
 	return (c == '0' || c == 'C' || c == 'P' || c == 'E' || c == 'T');
 }

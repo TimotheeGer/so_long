@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:25:42 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/16 15:52:33 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/26 16:09:33 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_quit(int a, char *str, t_data *d)
 	}
 	if (d->c)
 		ft_lstclear_collect(d->c);
+	if (d->twist)
+		ft_lstclear_twist(d->twist);
 	exit(0);
 }
 

@@ -5,50 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 12:55:09 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/21 12:12:29 by tigerber         ###   ########.fr       */
+/*   Created: 2021/10/26 20:23:43 by tigerber          #+#    #+#             */
+/*   Updated: 2021/10/26 20:24:04 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <time.h>
-#include <stdio.h>
-#include <libc.h>
-
-
-void    ft_test(struct tm *time)
+void	ft_print_all_para(t_data *d)
 {
-    printf("tm test = %d\n", time->tm_sec);
-}
+	int i = 0;
+	t_list *temp;
+	t_collect *temc;
+	t_list_twist *temt;
 
-int main()
-{
-    int one = 0;
-    int two = 0;
-    time_t t;
-    
-    time(&t);
-    int i = 100;
-    struct tm *mytime = localtime(&t);
-    
-    printf("time = %s\n", ctime(&t));
-
-    printf("tm 1 = %d\n", mytime->tm_sec);
-    // one = mytime->tm_sec;
-    // while (mytime->tm_sec)
-    // {
-    //     printf("one = %d\n", one);
-    //     printf("mytime = %d\n", mytime->tm_sec);
-    //     printf("mytime = %d\n", mytime->tm_sec);
-    //     if ( one == mytime->tm_sec + 5)
-    //         break;
-    // }
-    printf("clock = %d\n", (int)clock());
-    printf("tm 2 = %d\n", mytime->tm_sec);
-    // sleep(4);
-    struct tm *mytime2 = localtime(&t);
-    printf("tm 3 = %d\n", mytime2->tm_sec);
-    ft_test(mytime2);
-    printf("time = %s\n", ctime(&t));
-    printf("clock = %ld\n", clock());
-    return (0);
+	temp = d->lst;
+	temc = d->c; 
+	temt = d->twist; 
+	while (temp)
+	{
+		printf ("#lst = %s#\n", (char *)temp->content);
+		temp = temp->next;
+	}
+	if (d->map)
+	{
+		while (d->map[i])
+		{
+			printf("*test map = %s*\n", d->map[i]);
+			i++;
+		}
+	}
+	printf("map[fin] = %s\n", d->map[ft_count_line_in_tab(d->map) - 1]);
+	printf("posi P x = %f\n", d->p.x);
+	printf("posi P y = %f\n", d->p.y);
+	printf("indic P y = %d\n", d->p.indicateur);
+	printf("posi E x = %f\n", d->e.x);
+	printf("posi E y = %f\n", d->e.y);
+	printf("indic E = %d\n", d->e.indicateur);
+	while (temc)
+	{
+		printf("temc x = %d\n",temc->x);
+		printf("temc y = %d\n",temc->y);
+		printf("temc indic = %d\n",d->indic_c);
+		temc = temc->next;
+	}
+	while (temt)
+	{
+		printf("temt x = %d\n",temt->x);
+		printf("temt y = %d\n",temt->y);
+		temt = temt->next;
+	}
+	printf("size map x = %d\n", d->m.size_x);
+	printf("size map y = %d\n", d->m.size_y);
 }

@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:21:41 by tigerber          #+#    #+#             */
-/*   Updated: 2021/08/16 15:52:20 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:09:22 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_argu(t_data *d, int ac, char **av)
 	if ((ac == 2 && ft_checkargu(av[1])) == 1)
 		d->fd = open(av[1], O_RDONLY);
 	else
-		ft_quit(1, "Error\nerror argument.\n", NULL);
+		ft_quit(1, "Error\nError argument.\n", NULL);
 	if (d->fd == -1)
-		ft_quit(1, "Error\nerror argument.\n", NULL);
+		ft_quit(1, "Error\nError argument.\n", NULL);
 }

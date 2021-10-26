@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:41:08 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/05 14:28:54 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/26 18:52:24 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,10 @@
 
 void	ft_destroy(t_data *d)
 {
-	if (d->eau.img)
-		mlx_destroy_image(d->mlx, d->eau.img);
-	if (d->pierre.img)
-		mlx_destroy_image(d->mlx, d->pierre.img);
-	if (d->gate.img)
-		mlx_destroy_image(d->mlx, d->gate.img);
-	if (d->pomme.img)
-		mlx_destroy_image(d->mlx, d->pomme.img);
-	if (d->player1.img)
-		mlx_destroy_image(d->mlx, d->player1.img);
-	if (d->player2.img)
-		mlx_destroy_image(d->mlx, d->player2.img);
-	if (d->player3.img)
-		mlx_destroy_image(d->mlx, d->player3.img);
-	if (d->player4.img)
-		mlx_destroy_image(d->mlx, d->player4.img);
-	if (d->player5.img)
-		mlx_destroy_image(d->mlx, d->player5.img);
-	if (d->player6.img)
-		mlx_destroy_image(d->mlx, d->player6.img);
-	if (d->player7.img)
-		mlx_destroy_image(d->mlx, d->player7.img);
-	if (d->player8.img)
-		mlx_destroy_image(d->mlx, d->player8.img);
-	if (d->player9.img)
-		mlx_destroy_image(d->mlx, d->player9.img);
+	ft_destroy_evironement(d);
+	ft_destroy_players(d);
+	ft_destroy_tornade(d);
+	ft_destroy_explo(d);
 	if (d->screen.img)
 		mlx_destroy_image(d->mlx, d->screen.img);
 	if (d->win)
@@ -51,10 +29,15 @@ void	ft_destroy(t_data *d)
 	}
 	if (d->c)
 		ft_lstclear_collect(d->c);
+	if (d->twist)
+		ft_lstclear_twist(d->twist);
 	if (d->begin)
 		ft_lstclear(&d->begin, free);
 	if (d->map)
 		ft_free_tab(d->map);
+	if (d->str_steps)
+		free(d->str_steps);
+	ft_print_game_over();
 }
 
 int	ft_escape(int keycode, t_data *d, int a)

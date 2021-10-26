@@ -6,7 +6,7 @@
 #    By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/26 15:50:08 by tigerber          #+#    #+#              #
-#    Updated: 2021/10/21 13:44:13 by tigerber         ###   ########.fr        #
+#    Updated: 2021/10/26 19:41:51 by tigerber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,17 +27,28 @@ SRC =	./srcs/so_long.c \
 		./srcs/parsing/ft_get_map.c \
 		./srcs/parsing/ft_utils_parse.c \
 		./srcs/parsing/ft_utils_parse_two.c \
+		./srcs/parsing/ft_utils_parse_three.c \
 		./srcs/parsing/ft_parse_map.c \
 		./srcs/parsing/ft_utils_lst.c \
+		./srcs/parsing/ft_utils_lst_two.c \
 		./srcs/draw/ft_draw.c \
+		./srcs/draw/ft_destroy.c \
 		./srcs/draw/ft_make_image.c \
 		./srcs/draw/ft_quit_image.c \
 		./srcs/draw/ft_utils_draw.c \
 		./srcs/draw/ft_draw_map.c \
+		./srcs/draw/ft_draw_map_two.c \
+		./srcs/draw/ft_draw_map_three.c \
 		./srcs/draw/ft_utils_draw_map.c \
+		./srcs/draw/ft_utils_draw_map_two.c \
 		./srcs/draw/ft_draw_player.c \
+		./srcs/draw/ft_draw_player_two.c \
 		./srcs/draw/ft_get_texture.c \
-		./srcs/mov/mov.c
+		./srcs/draw/ft_get_texture_two.c \
+		./srcs/draw/ft_get_texture_three.c \
+		./srcs/mov/mov.c \
+		./srcs/mov/ft_utils_mov_one.c \
+		./srcs/mov/ft_utils_mov_two.c 
 		
 OBJS = ${SRC:.c=.o}
 
@@ -49,7 +60,6 @@ $(NAME) : ${OBJS}
 	@${CC} ${CFLAGS} ${LDFLAGS} ${DEFINE_DEFAULT} ${OBJS} -o ${NAME} ${LIBS}
 
 %.o : %.c
-	# @${CC} ${CFLAGS} ${HEAD} -c $< -o ${<:.c=.o}
 	@$(CC) $(CFLAGS) ${HEAD} -o $@ -c $<
 
 clean :
