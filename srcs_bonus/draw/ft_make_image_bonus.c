@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_make_image.c                                    :+:      :+:    :+:   */
+/*   ft_make_image_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 14:29:36 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/27 16:42:53 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:43:39 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ int	ft_render_next_frame(t_data *d)
 	ft_full_screen_color(d);
 	ft_draw_map(d);
 	ft_draw_player(d, 12);
+	ft_put_box(d);
 	mlx_put_image_to_window(d->mlx, d->win, d->screen.img, 0, 0);
+	ft_put_steps(d);
+	mlx_string_put(d->mlx, d->win, 15, 17, 0x000000, d->str_steps);
 	return (0);
 }

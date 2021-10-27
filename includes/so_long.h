@@ -6,7 +6,7 @@
 /*   By: tigerber <tigerber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 13:05:11 by tigerber          #+#    #+#             */
-/*   Updated: 2021/10/26 20:44:10 by tigerber         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:46:23 by tigerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -335,6 +335,12 @@ void			ft_draw_player_left(t_data *d, int x2, int y2);
 
 void			ft_draw_player_start(t_data *d, int x2, int y2);
 
+int				ft_checkis_ocpetone(char c);
+
 void			ft_print_game_over(void);
+
+void			ft_print_dead(void);
+
+void			ft_print_gameover_dead(t_data *d);
 
 #endif
